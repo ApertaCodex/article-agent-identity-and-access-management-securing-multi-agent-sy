@@ -4,17 +4,17 @@
 
 # Agent Identity and Access Management: Securing Multi-Agent Systems
 
-The enterprise AI landscape is shifting beneath our feet. What began as single‑purpose chatbots and copilots is rapidly evolving into ecosystems of autonomous, semi‑autonomous, and inter‑operating AI agents. These agents don’t just answer questions—they make decisions, execute transactions, move data, and orchestrate workflows across cloud services, internal APIs, and partner systems. In this new reality, the question is no longer “How do we manage human user access?” but “How do we manage **agent** access?”
+The enterprise AI landscape is shifting beneath our feet. What began as single‑purpose chatbots and copilots is rapidly evolving into ecosystems of autonomous, semi‑autonomous, and inter‑operating AI agents. These agents don’t just answer questions, they make decisions, execute transactions, move data, and orchestrate workflows across cloud services, internal APIs, and partner systems. In this new reality, the question is no longer “How do we manage human user access?” but “How do we manage **agent** access?”
 
 Traditional Identity and Access Management (IAM) was built for people. It assumes a human behind a keyboard, a session that begins and ends, and permissions tied to a role in an org chart. Agents, however, operate differently: they act on behalf of users, services, or even other agents; they run continuously or on demand; they scale horizontally; and they often require fine‑grained, dynamic permissions that change with context. Without a purpose‑built **Agent IAM**, organizations risk blind spots, over‑privileged agents, and catastrophic security breaches.
 
-In this post, we’ll explore why agent identity is the cornerstone of secure multi‑agent systems, the principles that must guide an agent‑native IAM architecture, and how Omnithium delivers a unified control plane that brings Zero Trust to the agentic enterprise.
+, we’ll explore why agent identity is the cornerstone of secure multi‑agent systems, the principles that must guide an agent‑native IAM architecture, and how Omnithium delivers a unified control plane that brings Zero Trust to the agentic enterprise.
 
 ---
 
 ## The Rise of the Agentic Enterprise
 
-Before diving into IAM, let’s ground the discussion in what’s actually happening inside modern enterprises. According to recent surveys, over 60% of large organizations are piloting or deploying multi‑agent systems. These aren’t just experimental side projects—they’re being woven into critical business processes: supply chain optimization, fraud detection, customer service triage, code generation, and even autonomous financial trading.
+Before diving into IAM, let’s ground the discussion in what’s actually happening inside modern enterprises. According to recent surveys, over 60% of large organizations are piloting or deploying multi‑agent systems. These aren’t just experimental side projects, they’re being woven into critical business processes: supply chain optimization, fraud detection, customer service triage, code generation, and even autonomous financial trading.
 
 A typical multi‑agent system might involve:
 
@@ -41,7 +41,7 @@ RBAC works for humans because job functions are relatively stable. An agent, how
 
 ### 3. **No Concept of Agent‑to‑Agent Trust**
 
-When Agent A calls Agent B, how does B know that A is legitimate? In human IAM, delegation is often handled via impersonation or OAuth2 on‑behalf‑of flows, but these assume a human principal at the root. In agent systems, the originator might be a cron‑like scheduler or a machine‑learning inference result—no human in the loop.
+When Agent A calls Agent B, how does B know that A is legitimate? In human IAM, delegation is often handled via impersonation or OAuth2 on‑behalf‑of flows, but these assume a human principal at the root. In agent systems, the originator might be a cron‑like scheduler or a machine‑learning inference result, no human in the loop.
 
 ### 4. **Audit and Observability Gaps**
 
@@ -59,7 +59,7 @@ To address these gaps, we need a new set of design principles that extend Zero T
 
 ### **Principle 1: Every Agent Gets a Verifiable Identity**
 
-An agent’s identity must be cryptographically provable and independent of network location. This is the foundation of Zero Trust: never trust, always verify. Technologies like SPIFFE (Secure Production Identity Framework for Everyone) provide a standardized way to issue short‑lived X.509 certificates or JWTs to workloads, including agents. Each agent receives a unique identity tied to its attributes—environment, version, owner, purpose—not just an IP address.
+An agent’s identity must be cryptographically provable and independent of network location. This is the foundation of Zero Trust: never trust, always verify. Technologies like SPIFFE (Secure Production Identity Framework for Everyone) provide a standardized way to issue short‑lived X.509 certificates or JWTs to workloads, including agents. Each agent receives a unique identity tied to its attributes, environment, version, owner, purpose, not just an IP address.
 
 ### **Principle 2: Least Privilege, Continuously Enforced**
 
@@ -75,7 +75,7 @@ Agent IAM must integrate with CI/CD pipelines and orchestration platforms (Kuber
 
 ### **Principle 5: Comprehensive Audit Trail**
 
-Every authentication and authorization decision should be logged in a structured, immutable format. Logs must include the agent’s identity, the resource, the action, the policy that was evaluated, and the result. This not only satisfies compliance but also enables anomaly detection—sudden changes in an agent’s access pattern can signal a compromise.
+Every authentication and authorization decision should be logged in a structured, immutable format. Logs must include the agent’s identity, the resource, the action, the policy that was evaluated, and the result. This not only satisfies compliance but also enables anomaly detection, sudden changes in an agent’s access pattern can signal a compromise.
 
 ---
 
@@ -95,10 +95,10 @@ Authorization logic should be centralized in a PDP that can evaluate fine‑grai
 
 ```rego
 allow {
-    input.agent.attributes.env == "prod"
-    input.agent.attributes.purpose == "payment"
-    input.resource.type == "database"
-    input.action == "read"
+ input.agent.attributes.env == "prod"
+ input.agent.attributes.purpose == "payment"
+ input.resource.type == "database"
+ input.action == "read"
 }
 ```
 
@@ -124,7 +124,7 @@ While the components above are individually available, stitching them together i
 
 ### **Agent Identity Bootstrapping**
 
-Omnithium integrates with your existing infrastructure—Kubernetes clusters, cloud providers, or bare‑metal—to automatically issue SPIFFE‑compatible identities to every agent. Our lightweight agent sidecar handles SVID rotation and presents a local API that agents use to obtain tokens for outbound calls. No code changes required in most cases.
+Omnithium integrates with your existing infrastructure, Kubernetes clusters, cloud providers, or bare‑metal, to automatically issue SPIFFE‑compatible identities to every agent. Our lightweight agent sidecar handles SVID rotation and presents a local API that agents use to obtain tokens for outbound calls. No code changes required in most cases.
 
 ### **Declarative, Context‑Aware Policies**
 
@@ -136,7 +136,7 @@ Omnithium’s built‑in delegation engine handles token chaining transparently.
 
 ### **Continuous Compliance and Drift Detection**
 
-Our platform continuously monitors agent behavior against the defined policies. If an agent’s actual permissions drift from the desired state—due to a misconfiguration or a malicious actor—Omnithium can automatically revoke its credentials and alert the security operations center. This closes the loop between policy definition and enforcement.
+Our platform continuously monitors agent behavior against the defined policies. If an agent’s actual permissions drift from the desired state, due to a misconfiguration or a malicious actor, Omnithium can automatically revoke its credentials and alert the security operations center. This closes the loop between policy definition and enforcement.
 
 ### **Enterprise Integration**
 
@@ -167,7 +167,7 @@ A logistics company orchestrates agents from multiple vendors: one for route opt
 Beyond security, investing in agent IAM delivers tangible business outcomes:
 
 - **Accelerated AI Adoption**: When security and compliance teams have confidence in agent access controls, they can green‑light more agent use cases faster. This reduces the friction that often stalls AI initiatives.
-- **Reduced Operational Risk**: Automated credential management and least‑privilege enforcement minimize the risk of data breaches caused by over‑privileged agents—a risk that grows exponentially with the number of agents.
+- **Reduced Operational Risk**: Automated credential management and least‑privilege enforcement minimize the risk of data breaches caused by over‑privileged agents, a risk that grows exponentially with the number of agents.
 - **Audit Readiness**: With per‑agent audit trails, regulatory audits become straightforward. You can demonstrate exactly which agents accessed what data and under which policies.
 - **Vendor Flexibility**: A standards‑based identity layer (SPIFFE, OPA) prevents lock‑in. You can swap out agent frameworks or cloud providers without rewriting your security model.
 
