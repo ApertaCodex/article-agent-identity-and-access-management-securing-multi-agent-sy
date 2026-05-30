@@ -194,19 +194,3 @@ Multi‑agent systems represent the next frontier of enterprise automation, but 
 At Omnithium, we believe that agent governance should be as seamless as the agents themselves. Our platform brings Zero Trust to the agentic enterprise, allowing you to innovate with confidence. If you’re ready to move beyond shared API keys and static roles, we’d love to show you how.
 
 **Learn more at [omnithium.ai](https://omnithium.ai) or reach out to our team for a personalized demo of Agent IAM in action.**
-
----
-
-*Originally published on the [Omnithium Blog](https://omnithium.ai/blog/agent-identity-access-management-iam).*
-
-📚 Explore more articles on the [Omnithium Blog](https://omnithium.ai/blog)
-
-🚀 [Get started with Omnithium](https://omnithium.ai/signup) | [Explore the platform](https://omnithium.ai/platform/) | [Book a demo](https://omnithium.ai/demo/) | [Resources](https://omnithium.ai/resources)
-
----
-
-**[Omnithium](https://omnithium.ai)** -- the AI agent platform for enterprises.
-
-📚 [Explore the Omnithium Blog](https://omnithium.ai/blog) for more insights.
-
-🚀 [Get started](https://omnithium.ai/signup) | [Explore the platform](https://omnithium.ai/platform/) | [Book a demo](https://omnithium.ai/demo/) | [Resources](https://omnithium.ai/resources)
